@@ -13,8 +13,6 @@
 | Job Search | Not available | Cached JSON + API fallback (search_jobs tool) |
 | Conversation Memory | Basic | ConversationBufferMemory with follow-up support |
 | Confidence Gate | Not available | Intent routing only above 85/100 threshold |
-| Fault Tolerance | Basic error handling | Circuit breakers, retries, dead-letter queues |
-| Scalability | Single instance | Horizontal scaling, caching, async processing |
 | Observability | Logging only | Structured logging + metrics + tracing |
 
 ---

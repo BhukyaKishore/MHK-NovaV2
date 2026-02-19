@@ -41,7 +41,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 
 ### Tasks (Phased)
 
-#### Phase 1 — Foundation (Week 1-2)
+#### Phase 1 — Foundation
 - [ ] Set up FastAPI project structure with config management
 - [ ] Define `AgentState` TypedDict with all fields
 - [ ] Build LangGraph graph: session > intent > confidence gate > tool selection > response nodes
@@ -52,7 +52,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Create middleware (CORS, rate limiting, error handling)
 - [ ] Set up dependency injection framework
 
-#### Phase 2 — Graph Coordination (Week 3-4)
+#### Phase 2 — Graph Coordination 
 - [ ] Implement intent detection node (LLM-based classification)
 - [ ] Build conditional edges with confidence gate enforcement
 - [ ] Implement tool selection node (maps intent to tool)
@@ -61,7 +61,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Implement conversation memory (ConversationBufferMemory)
 - [ ] Add session persistence (Redis / in-memory fallback)
 
-#### Phase 3 — Resilience and Production (Week 5-6)
+#### Phase 3 — Resilience and Production 
 - [ ] Implement circuit breaker for all external services
 - [ ] Add retry handlers with configurable backoff
 - [ ] Build dead-letter queue for failed operations
@@ -106,7 +106,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 
 ### Tasks (Phased)
 
-#### Phase 1 — General Q&A Tool (Week 1-2)
+#### Phase 1 — General Q&A Tool 
 - [ ] Implement RAG retriever (semantic search in Qdrant)
 - [ ] Build context builder (format retrieved chunks)
 - [ ] Implement response generator (LLM with prompt template)
@@ -115,7 +115,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Handle follow-up questions (pronoun resolution via history)
 - [ ] Handle edge cases: no results, irrelevant queries, greetings
 
-#### Phase 2 — Meeting Scheduler Tool (Week 3-4)
+#### Phase 2 — Meeting Scheduler Tool 
 - [ ] Build OTP service (generate, send via SMTP, verify, expire)
 - [ ] Hash OTPs before storage
 - [ ] Implement rate limiting for OTP requests
@@ -127,7 +127,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Handle flow interruptions (cancel, timeout, retry)
 - [ ] Create HR email template
 
-#### Phase 3 — Job Search Tool (Week 4-5)
+#### Phase 3 — Job Search Tool 
 - [ ] Implement job cache service (in-memory/Redis with TTL)
 - [ ] Build job API/DB connector
 - [ ] Create search_jobs tool (cache check > fetch > filter > answer)
@@ -135,7 +135,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Build frontend JobListings/JobCard components
 - [ ] Handle edge cases: no jobs, stale cache, API failure
 
-#### Phase 4 — Integration (Week 5-6)
+#### Phase 4 — Integration 
 - [ ] Register all tools with the LangGraph agent
 - [ ] Implement intent switching mid-conversation
 - [ ] Add API endpoints for all workflows
@@ -182,7 +182,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 
 ### Tasks (Phased)
 
-#### Phase 1 — Infrastructure Setup (Week 1)
+#### Phase 1 — Infrastructure Setup 
 - [ ] Create `docker-compose.yml` (FastAPI + Qdrant + Redis)
 - [ ] Create Dockerfiles for frontend and backend
 - [ ] Set up GitHub repository with branch protection
@@ -191,7 +191,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Define all Pydantic schemas and data models
 - [ ] Set up environment variable management
 
-#### Phase 2 — Ingestion Pipeline (Week 2-3)
+#### Phase 2 — Ingestion Pipeline 
 - [ ] Implement multi-format document loader (PDF, DOCX, TXT, MD)
 - [ ] Build text cleaner (remove boilerplate, normalize)
 - [ ] Implement configurable text chunker (fixed-size, overlap-based)
@@ -202,7 +202,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Create ingest_document tool wrapping the pipeline
 - [ ] Add async ingestion with status tracking
 
-#### Phase 3 — Shared Services (Week 3-4)
+#### Phase 3 — Shared Services 
 - [ ] Build shared OpenAI client wrapper (used by agent and tools)
 - [ ] Implement connection pooling for Qdrant
 - [ ] Create document management endpoints (upload, list, delete, status)
@@ -210,7 +210,7 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 - [ ] Build embedding caching layer
 - [ ] Handle rate limits with exponential backoff
 
-#### Phase 4 — DevOps and Deployment (Week 5-6)
+#### Phase 4 — DevOps and Deployment 
 - [ ] Set up production Docker Compose
 - [ ] Configure Nginx reverse proxy
 - [ ] Set up Redis for caching/sessions
@@ -243,17 +243,17 @@ Work is divided based on **ownership of tools, features, and sub-systems**, with
 ## Development Timeline
 
 ```
-WEEK 1-2:  Foundation
+WEEK 1:  Foundation
            +-- Dev 1: FastAPI setup, AgentState, LangGraph nodes, confidence gate, logging
            +-- Dev 2: RAG pipeline, query_kb tool
            +-- Dev 3: Docker setup, GitHub, ingestion pipeline (start)
 
-WEEK 3-4:  Core Features
+WEEK 1.5:  Core Features
            +-- Dev 1: Intent node, tool selection, graph edges, memory
            +-- Dev 2: schedule_meeting tool (OTP + form), search_jobs tool
            +-- Dev 3: Ingestion pipeline (complete), shared services
 
-WEEK 5-6:  Resilience and Production
+WEEK 2:  Resilience and Production
            +-- Dev 1: Circuit breakers, retries, monitoring
            +-- Dev 2: Frontend components, tool integration, E2E tests
            +-- Dev 3: Deployment, CI/CD, performance optimization
